@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "esbuild": "^0.14.1",
-    "jest": "^27.4.2"
+    "express": "^4.17.1",
+    "jest": "^27.4.3"
   },
   "name": "js-notes_app",
   "version": "1.0.0",
