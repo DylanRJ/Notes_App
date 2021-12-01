@@ -10,20 +10,28 @@
         fetch("http://localhost:3000/notes", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ "title": `${notetitle}`, "body": `${notebody}` })
-        }).then((response) => response.json()).then((data) => callback2(data));
+          body: JSON.stringify({ "title": `${notetitle}`, "content": `${notebody}` })
+        }).then((response) => response.json()).then((data) => {
+          console.log(data.title);
+          const tag = document.createElement("span");
+          tag.textContent = data.title;
+          tag.id = "note-1";
+          document.body.appendChild(document.createElement("br"));
+          document.body.appendChild(document.createElement("br"));
+          document.body.appendChild(tag);
+        });
       };
-      module.exports = addNote2;
+      module.exports.addnote = addNote2;
     }
   });
 
   // index.js
-  var addNote = require_addnote();
+  var { addNote } = require_addnote();
   var button = document.querySelector("#note-submit");
   var callback = (variabledata) => {
     console.log(variabledata);
   };
   button.addEventListener("click", () => {
-    addNote(document.querySelector("#title-input"), document.querySelector("#title-body"), callback);
+    addNote(document.querySelector("#title-input").value, document.querySelector("#body-input").value, callback);
   });
 })();

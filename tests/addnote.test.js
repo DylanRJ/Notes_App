@@ -7,7 +7,7 @@ test('displays list of notes', () => {
     <h1>Notes</h1>
     <input type="text" id="title-input">
     <input type="text" id="body-input">
-    <input type="button" id="note-submit"/>
+    <button id="note-submit">submit</button>
   `;
 
   require('../index');
