@@ -6,14 +6,13 @@ const addNote = (notetitle, notebody, callback) => {
     })
     .then(response => response.json())
     .then(data => {
-        console.log(data.title)
-        const tag = document.createElement('span')
-        tag.textContent = data.title
-        tag.id = 'note-1'
-        document.body.appendChild(document.createElement('br'))
-        document.body.appendChild(document.createElement('br'))
-        document.body.appendChild(tag)
-      })
+        const tag = document.createElement('span');
+        tag.textContent = data.title;
+        tag.id = 'note-1';
+        document.body.appendChild(document.createElement('br'));
+        document.body.appendChild(document.createElement('br'));
+        document.body.appendChild(tag);
+      });
 }
 
 
